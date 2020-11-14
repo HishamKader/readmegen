@@ -46,10 +46,6 @@ async function getUserInput() {
                 "MIT License",
                 "BSD 2-Clause 'Simplified' License",
                 "Boost Software License 1.0",
-                "Creative Commons Zero v1.0 Universal",
-                "Eclipse Public License 2.0",
-                "Mozilla Public License 2.0",
-                "The Unlicense"
             ]
         },
         {
@@ -113,7 +109,7 @@ async function writeReadMe() {
     ${ test }
     ## Questions
     [Shoot me an email](mailto: ${ email })
-    [Visit my Github profile](https:github.com/${github})
+    [Visit my Github profile](//https:github.com/${github})
     `
         fs.writeFile("./generated-file/README.md", myMarkdown, (err) =>
             err ? console.log(err) : console.log("ReadMe.md created successfully!")
