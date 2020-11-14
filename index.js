@@ -63,3 +63,22 @@ async function getUserInput() {
             name: 'github',
         },
     ]);
+    return data;
+} catch (error) {
+    console.log(error);
+}
+
+}
+
+async function writeReadMe() {
+    const {
+        name,
+        description,
+        installation,
+        usage,
+        contribution,
+        test,
+        licenses,
+        email,
+        github
+    } = await getUserInput();
