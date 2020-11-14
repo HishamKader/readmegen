@@ -1,4 +1,4 @@
-const inquirer = require('inquirer');
+const inquirer = require("inquirer");
 const fs = require('fs');
 const lics = require("./licenses");
 
@@ -87,34 +87,34 @@ async function writeReadMe() {
     const lic = lics.getLicense(licenses);
 
     const myMarkdown =
-
-    // # ${ name }
+    `
+    # ${ name }
    
-    // ## License
-    // ${ lic } | This app is licensed under ${ licenses }
+    ## License
+    ${ lic } | This app is licensed under ${ licenses }
    
-    // ## Table of Contents
-    //     - [Licensing Information](#License)
-    //     - [Description](#Description)
-    //     - [Usage](#Usage)
-    //     - [Contribution](#Contribution)
-    //     - [Tests](#Tests)
-    //     - [Questions](#Questions)
+    ## Table of Contents
+        - [Licensing Information](#License)
+        - [Description](#Description)
+        - [Usage](#Usage)
+        - [Contribution](#Contribution)
+        - [Tests](#Tests)
+        - [Questions](#Questions)
     
-    // ## Description
-    // ${ description }
-    // ## Installation
-    // ${ installation }
-    // ## Usage
-    // ${ usage }
-    // ## Contribution
-    // ${ contribution }
-    // ## Tests
-    // ${ test }
-    // ## Questions
-    // [Shoot me an email](mailto: ${ email })
-    // [Visit my Github profile](https://github.com/${github})
-
+    ## Description
+    ${ description }
+    ## Installation
+    ${ installation }
+    ## Usage
+    ${ usage }
+    ## Contribution
+    ${ contribution }
+    ## Tests
+    ${ test }
+    ## Questions
+    [Shoot me an email](mailto: ${ email })
+    [Visit my Github profile](https:github.com/${github})
+    `
         fs.writeFile("./generated-file/README.md", myMarkdown, (err) =>
             err ? console.log(err) : console.log("ReadMe.md created successfully!")
         );
