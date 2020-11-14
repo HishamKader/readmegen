@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const { async } = require('rxjs');
+const lics = require("./licenses");
 
 async function getUserInput() {
 
@@ -62,15 +62,16 @@ async function getUserInput() {
             message: "Enter your github username: ",
             name: 'github',
         },
-    ]);
-    return data;
-} catch (error) {
-    console.log(error);
-}
+        ]);
+        return data;
+    } catch (error) {
+        console.log(error);
+    }
 
 }
 
 async function writeReadMe() {
+    
     const {
         name,
         description,
@@ -82,3 +83,41 @@ async function writeReadMe() {
         email,
         github
     } = await getUserInput();
+
+    const lic = lics.getLicense(licenses);
+
+    const myMarkdown =
+
+    // # ${ name }
+   
+    // ## License
+    // ${ lic } | This app is licensed under ${ licenses }
+   
+    // ## Table of Contents
+    //     - [Licensing Information](#License)
+    //     - [Description](#Description)
+    //     - [Usage](#Usage)
+    //     - [Contribution](#Contribution)
+    //     - [Tests](#Tests)
+    //     - [Questions](#Questions)
+    
+    // ## Description
+    // ${ description }
+    // ## Installation
+    // ${ installation }
+    // ## Usage
+    // ${ usage }
+    // ## Contribution
+    // ${ contribution }
+    // ## Tests
+    // ${ test }
+    // ## Questions
+    // [Shoot me an email](mailto: ${ email })
+    // [Visit my Github profile](https://github.com/${github})
+
+        fs.writeFile("./generated-file/README.md", myMarkdown, (err) =>
+            err ? console.log(err) : console.log("ReadMe.md created successfully!")
+        );
+}
+
+writeReadMe();
