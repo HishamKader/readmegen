@@ -19,7 +19,7 @@ ReadMeToo is a readme generator application running in node.js. This is a CLI ap
 ## Installation
 **Clone the repo**
 ```
-  $ git clone https://github.com/HishamKader/rut-hw7-readmegen.git
+  $ git clone git@github.com:HishamKader/rut-hw7-readmegen.git
 ```
 **Install the necessary node packages**
 ```
