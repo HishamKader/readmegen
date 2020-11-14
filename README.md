@@ -49,3 +49,5 @@ To test the application in general
 ```
 $ node index.js
 ```
+# Video installation Guide
+[Video Link]https://drive.google.com/file/d/1Czf-xMmR0TFjK4-PDbgnKJ3rwjHKRjHL/view?usp=sharing
